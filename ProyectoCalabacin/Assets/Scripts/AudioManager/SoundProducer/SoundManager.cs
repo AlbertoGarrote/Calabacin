@@ -37,7 +37,7 @@ namespace Game.Audio
         private GameObject CreateSoundProducerObject(){
             GameObject go = Instantiate(SoundProducerPrefab, StartingSoundContainer);
             go.name = SoundProducerPrefab.name;
-            go.tag = "AudioProducer";
+            go.tag = "SoundProducer";
             go.SetActive(false);
             return go;
         }
@@ -49,7 +49,7 @@ namespace Game.Audio
                 if (audioProducer is null)
                     throw new Exception($"Audio Producer no fue encontrado en el objeto {audioProducerGO}");
 
-                if (audioProducer.tag != "AudioProducer")
+                if (audioProducer.tag != "SoundProducer")
                 {
                     Debug.LogWarning($"El objeto {audioProducerGO} no es un AudioProducer creado por AudioManager");
                     return;

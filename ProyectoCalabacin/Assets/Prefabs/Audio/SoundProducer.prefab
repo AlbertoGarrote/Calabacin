@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7866781954793370845}
   m_Layer: 0
   m_Name: SoundProducer
-  m_TagString: Untagged
+  m_TagString: SoundProducer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
