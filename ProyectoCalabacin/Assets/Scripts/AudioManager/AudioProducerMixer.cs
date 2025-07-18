@@ -44,6 +44,8 @@ namespace Game.Audio
             audioSource.volume = endVolume * 1f;
             soundProducer.ClearFadeCoroutine();
             onCompletion?.Invoke();
+
+            
         }
 
     }

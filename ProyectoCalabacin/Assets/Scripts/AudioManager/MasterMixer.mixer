@@ -1,53 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!244 &-7983692969876557183
-AudioMixerEffectController:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_EffectID: 290d061a1ae027c428dcd5db856f03fb
-  m_EffectName: OculusSpatializerReflection
-  m_MixLevel: 2099a95e3a3c16b4ab7d41cd991dffad
-  m_Parameters:
-  - m_ParameterName: GScale
-    m_GUID: b58c66b1bde34264480e0eddfccac91c
-  - m_ParameterName: E.Rflt On
-    m_GUID: 47439427ca7aa8747a976a2845835eb5
-  - m_ParameterName: E.Rflt Rev On
-    m_GUID: d0d48787050ec3e4f8193269e57185fd
-  - m_ParameterName: Room X
-    m_GUID: ae8261ff225f5b64bb49b91a24dfdb74
-  - m_ParameterName: Room Y
-    m_GUID: 4f9225270c2363f4680a7713161039cf
-  - m_ParameterName: Room Z
-    m_GUID: 19a678a3095b63b4f865a187475aff74
-  - m_ParameterName: Left
-    m_GUID: a002c66bd166f974b9fe589cc59a3ae2
-  - m_ParameterName: Right
-    m_GUID: dfbc728c18814d84aa96c7d8da05f19c
-  - m_ParameterName: Up
-    m_GUID: 4f671ac873285da46b211bcb6d00e2a3
-  - m_ParameterName: Down
-    m_GUID: 22990c182908c974090c130bdad92eb6
-  - m_ParameterName: Behind
-    m_GUID: 93f18aa40630c4044bcd05ff957a7b0e
-  - m_ParameterName: Front
-    m_GUID: 6f26504710c471f4caae20a0865847bd
-  - m_ParameterName: Shared Rev Min
-    m_GUID: 7d25780ac700bfb4fbf4030a31f0c299
-  - m_ParameterName: Shared Rev Max
-    m_GUID: 099e3d5051dfd9c479456745411efa82
-  - m_ParameterName: Shared Rev Wet
-    m_GUID: 1acda016d20e6264d8d0bac3b30c2e24
-  - m_ParameterName: Prop Quality
-    m_GUID: 1cb38de1d3295134b98a7c4315f0bc04
-  - m_ParameterName: Voice Limit
-    m_GUID: 4b81e47b96c62ae4198a51339eba7d39
-  m_SendTarget: {fileID: 0}
-  m_EnableWetMix: 0
-  m_Bypass: 0
 --- !u!243 &-6061806782724692136
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -104,7 +56,6 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 2275490431758723556}
-  - {fileID: 781350701627297256}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -223,59 +174,10 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 5243828123742087184}
-  - {fileID: -7983692969876557183}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
---- !u!244 &781350701627297256
-AudioMixerEffectController:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_EffectID: 8cbe3fc6e51841848bdb42b06330ecbc
-  m_EffectName: OculusSpatializerReflection
-  m_MixLevel: 8b7ab065fdf1ef4469cb01b05236362e
-  m_Parameters:
-  - m_ParameterName: GScale
-    m_GUID: d3f0ff9e1064df94f9c84f33affce904
-  - m_ParameterName: E.Rflt On
-    m_GUID: cc70d6b0bff1e4649b3c458675dd1881
-  - m_ParameterName: E.Rflt Rev On
-    m_GUID: d29ccfefddd50b74fac14f0cac46a1d9
-  - m_ParameterName: Room X
-    m_GUID: 0e121fb980fdaa3478d2abb03590c64a
-  - m_ParameterName: Room Y
-    m_GUID: 986c4c3934564cd46a99d61b9ad04528
-  - m_ParameterName: Room Z
-    m_GUID: b43707f53e45b4f4daab521cbfcd29f9
-  - m_ParameterName: Left
-    m_GUID: 5928eb18017539d42bc932f3a5e9de7c
-  - m_ParameterName: Right
-    m_GUID: 4614f69b8b17ef94fbb01bb3a459bbc9
-  - m_ParameterName: Up
-    m_GUID: c0d38cb530559934c8f3ce53b312cefd
-  - m_ParameterName: Down
-    m_GUID: e03c3de5fcb20074f8e68642c59ac813
-  - m_ParameterName: Behind
-    m_GUID: 19753768b6691694e993ccea4308a929
-  - m_ParameterName: Front
-    m_GUID: 90ddf64f0c58e30448b867f3472d24b5
-  - m_ParameterName: Shared Rev Min
-    m_GUID: 77156d5715a2c5f4bb373cdaded2d545
-  - m_ParameterName: Shared Rev Max
-    m_GUID: 933d86ba6e41bcc429bfc797d77e0081
-  - m_ParameterName: Shared Rev Wet
-    m_GUID: 2b52c65aac1a4544d86df69d13531d0d
-  - m_ParameterName: Prop Quality
-    m_GUID: 9b10b4250aafb074aafb43995d7cf54c
-  - m_ParameterName: Voice Limit
-    m_GUID: e6faa8b8ee265b34292d5e585c273c2d
-  m_SendTarget: {fileID: 0}
-  m_EnableWetMix: 0
-  m_Bypass: 0
 --- !u!244 &2275490431758723556
 AudioMixerEffectController:
   m_ObjectHideFlags: 3

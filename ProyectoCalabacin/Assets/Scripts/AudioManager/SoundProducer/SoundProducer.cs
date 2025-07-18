@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using Patterns.ServiceLocator;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Game.Audio
@@ -98,11 +97,15 @@ namespace Game.Audio
 
             if (stopProducerWithTag == soundProducerTag || stopProducerWithTag == string.Empty)
             {
-                attachedAudioSource?.Stop();
-                ClearFadeCoroutine();
-                hasPlayed = false;
-                soundManager.ReturnSoundProducerToPool(this.gameObject);
+                ImmediateStop();
             }
+        }
+        public void ImmediateStop()
+        {
+            attachedAudioSource?.Stop();
+            ClearFadeCoroutine();
+            hasPlayed = false;
+            soundManager.ReturnSoundProducerToPool(this.gameObject);
         }
         #endregion
 
@@ -133,9 +136,7 @@ namespace Game.Audio
         private void Update()
         {
             if (attachedAudioSource is null) return;
-            if(Input.GetKeyDown(KeyCode.J)){
-                PlaySound();
-            }
+
             if(!attachedAudioSource.isPlaying && !attachedAudioSource.loop && !paused && hasPlayed)
             {
                 StopSound(string.Empty, true);

@@ -185,27 +185,29 @@ namespace Game.Audio
         }
 
         #endregion
+
+        private SoundProducer ap;
         private void Start()
         {
             //PlaySoundAt(new Vector3(1,0,0), "Presente_profesora", AudioOptionsBuilder.BuildUnique2DAudio(true, "tag"));
             //ap = PlaySoundOn(this.gameObject, "Presente_profesora", AudioOptionsBuilder.BuildUnique2DImmediateAudio(true, "tag"));
             //PlaySoundOn(this.gameObject, "UI_back", AudioOptionsBuilder.BuildUnique2DAudio(true, "tag1"));
             //PlaySoundOn(this.gameObject, "UI_back", aparams);
+            ap = PlaySoundOn(this.gameObject, "ClienteEnfadado2", AudioOptionsBuilder.BuildUnique2DImmediateAudio(true, "tag"));
         }
 
         public void Update()
         {
-            /*if (Input.GetKeyDown(KeyCode.P))
-                ApplyFadeToAudioProducersWithTag("tag", 0, 1, 10);
+            if (Input.GetKeyDown(KeyCode.P))
+                ApplyFadeToSoundProducersWithTag("tag", 0, 1, 10);
 
             if (Input.GetKeyDown(KeyCode.R))
-                ap.FadeSound(1, 0, 10);
+                ap.FadeSound(1, 0, 10, ap.ImmediateStop);
 
             if (Input.GetKeyDown(KeyCode.S))
             {
-                StopAllAudioProducers(false);
-                SceneManager.LoadScene(0);
-            }*/
+                StopAllSoundProducers(false);
+            }
         }
 
     }
