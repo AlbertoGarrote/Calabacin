@@ -6,6 +6,7 @@ public class Draggeable : MonoBehaviour
 {
     Vector2 diferencia = Vector2.zero;
     private bool arrastrandoExternamente = false;
+    public int tipo;
 
     private void OnMouseDown()
     {
