@@ -39,7 +39,7 @@ public class Draggeable : MonoBehaviour
             Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
 
-            if (hit.collider != null && hit.collider.CompareTag("DropZoneTag"))
+            if (hit.collider != null && hit.collider.CompareTag("DropZoneTag") && !PaellaController.Instance.paellaLista)
             {
                 PaellaLogic zona = hit.collider.GetComponent<PaellaLogic>();
                 if (zona != null && zona.EstaDentro(mouseWorldPos))
