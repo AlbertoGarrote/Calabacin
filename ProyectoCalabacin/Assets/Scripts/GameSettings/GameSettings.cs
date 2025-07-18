@@ -10,7 +10,6 @@ public class GameSettings : SingletonService<GameSettings>
 {
     public float sfxVolume;
     public float musicVolume;
-    public int colorblindSetting;
 
     #region Actions
     public Action OnVolumeChanged;
