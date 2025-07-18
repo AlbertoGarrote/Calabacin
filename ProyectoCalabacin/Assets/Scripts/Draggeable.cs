@@ -41,12 +41,13 @@ public class Draggeable : MonoBehaviour
 
             if (hit.collider != null && hit.collider.CompareTag("DropZoneTag"))
             {
-                DropZone zona = hit.collider.GetComponent<DropZone>();
+                PaellaLogic zona = hit.collider.GetComponent<PaellaLogic>();
                 if (zona != null && zona.EstaDentro(mouseWorldPos))
                 {
                     Vector2 offset = Random.insideUnitCircle * 0.75f;
                     transform.position = (Vector2)zona.transform.position + offset;
 
+                    transform.SetParent(zona.transform);
                     zona.AñadirObjeto(gameObject);
                     return;
                 }
