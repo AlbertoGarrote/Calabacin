@@ -7,6 +7,12 @@ using UnityEngine;
 
 namespace Patterns.ServiceLocator.Services
 {
+    public enum GamePauseReasons
+    {
+        None = 0,
+        Dialog = 1,
+        UI = 2,
+    }
     public class PauseService : IService
     {
         public void InitializeService()

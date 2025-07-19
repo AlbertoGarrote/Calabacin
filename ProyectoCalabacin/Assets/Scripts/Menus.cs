@@ -15,7 +15,6 @@ public class Menus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 0.0f;
         MainMenu.SetActive(true);
         OptionsMenu.SetActive(false);
         Creditos.SetActive(false);
@@ -29,15 +28,11 @@ public class Menus : MonoBehaviour
         Debug.Log("A paellear");
         MainMenu.SetActive(false);
         UI.SetActive(true);
-
-        Time.timeScale = 1.0f;
     }
     public void BotonOpciones()
     {
         Debug.Log("Opciones");
         OptionsMenu.SetActive(true);
-
-        Time.timeScale = 0.0f;
     }
     public void BotonInstrucciones()
     {
@@ -60,7 +55,6 @@ public class Menus : MonoBehaviour
     public void VolverOpciones()
     {
         OptionsMenu.SetActive(false);
-        Time.timeScale = 1.0f;
     }
     public void VolverCreditos()
     {

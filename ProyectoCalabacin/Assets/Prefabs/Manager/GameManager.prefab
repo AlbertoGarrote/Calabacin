@@ -157,9 +157,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f465d71929b1c945abbb111e2dd81c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterMixer: {fileID: 24100000, guid: 4bf817b5693fa3047821dcaa1e906667, type: 2}
   sfxVolume: 1
   musicVolume: 1
-  colorblindSetting: 0
 --- !u!1 &7485652688772095042
 GameObject:
   m_ObjectHideFlags: 0

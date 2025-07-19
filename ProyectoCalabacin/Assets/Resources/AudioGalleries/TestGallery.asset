@@ -19,4 +19,10 @@ MonoBehaviour:
     maxListeningDistance: 50
     pitch: 1
     randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: 36c4a227fdd95c04f8443cf8d7a31960, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
   audioCollecions: []

@@ -75,6 +75,33 @@ namespace Game.Audio
         {
             return selectedSoundGallery.FindAudio(soundName);
         }
+
+        public SoundProducer PlayOverlaySound(string soundName, AudioOptions audioOptions)
+        {
+            if (TryGetSoundProducer(soundName, audioOptions, out GameObject audioProducerGO))
+            {
+                audioProducerGO.transform.parent = this.transform;
+                audioProducerGO.transform.localPosition = Vector3.zero;
+
+                audioProducerGO.SetActive(true);
+                return audioProducerGO.GetComponent<SoundProducer>();
+            }
+            return null;
+        }
+
+        public SoundProducer PlayOverlaySound(Audio audio, AudioOptions audioOptions)
+        {
+            if (TryGetSoundProducer(audio, audioOptions, out GameObject audioProducerGO))
+            {
+                audioProducerGO.transform.parent = this.transform;
+                audioProducerGO.transform.localPosition = Vector3.zero;
+
+                audioProducerGO.SetActive(true);
+                return audioProducerGO.GetComponent<SoundProducer>();
+            }
+            return null;
+        }
+
         public SoundProducer PlaySoundOn(GameObject obj, string soundName, AudioOptions audioOptions){
             if (TryGetSoundProducer(soundName, audioOptions, out GameObject audioProducerGO))
             {
@@ -193,7 +220,7 @@ namespace Game.Audio
             //ap = PlaySoundOn(this.gameObject, "Presente_profesora", AudioOptionsBuilder.BuildUnique2DImmediateAudio(true, "tag"));
             //PlaySoundOn(this.gameObject, "UI_back", AudioOptionsBuilder.BuildUnique2DAudio(true, "tag1"));
             //PlaySoundOn(this.gameObject, "UI_back", aparams);
-            ap = PlaySoundOn(this.gameObject, "ClienteEnfadado2", AudioOptionsBuilder.BuildUnique2DImmediateAudio(true, "tag"));
+            //ap = PlaySoundOn(this.gameObject, "ClienteEnfadado2", AudioOptionsBuilder.BuildUnique2DImmediateAudio(true, "tag"));
         }
 
         public void Update()
