@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9044672, b: 0.4481132, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -143,6 +143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d95d611ea8f1f049821df6045b14175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destino: {fileID: 8630559506186602312, guid: eb655a79e6b2f1f438d8fdc0f30fff0b, type: 3}
+  destino: {fileID: 0}
+  destinoNormal: {fileID: 8630559506186602312, guid: eb655a79e6b2f1f438d8fdc0f30fff0b, type: 3}
+  destinoBarra: {fileID: 5988207555697315211, guid: 8b06157098c624c4b96558a58648af42, type: 3}
   velocidad: 3
+  enMovimiento: 1
   radio: 0.8
+  tipoObjetosColocados: 

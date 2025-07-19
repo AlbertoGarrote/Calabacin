@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class PaellaLogic : MonoBehaviour
 {
-    public Transform destino;
+    public Transform destino, destinoNormal, destinoBarra;
     public float velocidad = 5f;
-    private bool enMovimiento = true;
+    public bool enMovimiento = true;
 
     [SerializeField] public float radio = 3f;
     public Vector2 posicionColocada => transform.position;
-    private List<GameObject> objetosColocados = new List<GameObject>();
+    public List<int> tipoObjetosColocados = new List<int>();
 
+    private void Awake()
+    {
+        destino = destinoNormal;
+    }
 
     void Update()
     {
@@ -23,6 +27,14 @@ public class PaellaLogic : MonoBehaviour
             {
                 enMovimiento = false;
                 PaellaController.Instance.PaellaLista();
+                if (destino == destinoBarra)
+                {
+                    destino = destinoNormal;
+                }
+                else
+                {
+                    destino = destinoBarra;
+                }
             }
         }
     }
@@ -34,24 +46,15 @@ public class PaellaLogic : MonoBehaviour
 
     public void AñadirObjeto(GameObject obj)
     {
-        if (!objetosColocados.Contains(obj))
+        if (!tipoObjetosColocados.Contains(obj.GetComponent<Draggeable>().tipo))
         {
-            objetosColocados.Add(obj);
+            tipoObjetosColocados.Add(obj.GetComponent<Draggeable>().tipo);
         }
     }
 
     public void QuitarObjeto(GameObject obj)
     {
-        objetosColocados.Remove(obj);
-    }
-
-    public void Limpiar()
-    {
-        foreach (var obj in objetosColocados)
-        {
-            Destroy(obj);
-        }
-        objetosColocados.Clear();
+        tipoObjetosColocados.Remove(obj.GetComponent<Draggeable>().tipo);
     }
 
     private void OnDrawGizmos()

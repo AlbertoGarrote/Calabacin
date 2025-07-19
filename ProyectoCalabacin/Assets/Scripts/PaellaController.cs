@@ -9,6 +9,7 @@ public class PaellaController : MonoBehaviour
     public GameObject paella, botonDesechar, botonEnviar;
     private GameObject paellaObj;
     private bool correctCam = true;
+    public Transform destinoBarra;
 
     void Awake()
     {
@@ -60,7 +61,7 @@ public class PaellaController : MonoBehaviour
     {
         Debug.Log("Paella Enviada");
         paellaLibre();
-        Destroy(paellaObj);
+        paellaObj.GetComponent<PaellaLogic>().enMovimiento = true;
         paellaLista = false;
     }
 
@@ -70,6 +71,13 @@ public class PaellaController : MonoBehaviour
         paellaLibre();
         Destroy(paellaObj);
         paellaLista = false;
+    }
+
+    public void Entregar()
+    {
+        Debug.Log("Paella Entregada");
+        EntregaController.Instance.EntregarFinal(paella.GetComponent<PaellaLogic>().tipoObjetosColocados);
+        Destroy(paellaObj);
     }
 
     private void Update()
