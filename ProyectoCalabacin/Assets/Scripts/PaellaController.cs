@@ -5,9 +5,10 @@ using UnityEngine;
 public class PaellaController : MonoBehaviour
 {
     public static PaellaController Instance { get; private set; }
-    public bool paellaEnPreparacion;
+    public bool paellaEnPreparacion, paellaLista = false;
     public GameObject paella, botonDesechar, botonEnviar;
     private GameObject paellaObj;
+    private bool correctCam = true;
 
     void Awake()
     {
@@ -41,10 +42,18 @@ public class PaellaController : MonoBehaviour
 
     }
 
+    public void CorrectCamTrue()
+    {
+        correctCam = true;
+    }
+    public void CorrectCamFalse()
+    {
+        correctCam = false;
+    }
+
     public void PaellaLista()
     {
-        botonDesechar.SetActive(true);
-        botonEnviar.SetActive(true);
+        paellaLista = true;
     }
 
     public void Enviar()
@@ -52,8 +61,7 @@ public class PaellaController : MonoBehaviour
         Debug.Log("Paella Enviada");
         paellaLibre();
         Destroy(paellaObj);
-        botonDesechar.SetActive(false);
-        botonEnviar.SetActive(false);
+        paellaLista = false;
     }
 
     public void Desechar()
@@ -61,7 +69,20 @@ public class PaellaController : MonoBehaviour
         Debug.Log("Paella Desechada");
         paellaLibre();
         Destroy(paellaObj);
-        botonDesechar.SetActive(false);
-        botonEnviar.SetActive(false);
+        paellaLista = false;
+    }
+
+    private void Update()
+    {
+        if(paellaLista == true && correctCam == true)
+        {
+            botonDesechar.SetActive(true);
+            botonEnviar.SetActive(true);
+        }
+        else
+        {
+            botonDesechar.SetActive(false);
+            botonEnviar.SetActive(false);
+        }
     }
 }
