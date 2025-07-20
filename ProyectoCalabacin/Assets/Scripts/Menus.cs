@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Patterns.ServiceLocator;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -23,11 +24,13 @@ public class Menus : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void BotonJugar() 
+    public void BotonJugar(string playScene, float transitionTime) 
     {
         Debug.Log("A paellear");
-        MainMenu.SetActive(false);
-        UI.SetActive(true);
+        //MainMenu.SetActive(false);
+        //UI.SetActive(true);
+
+        ServiceLocator.Instance.GetService<UITransitionCanvas>().UITransitions[0].TryTransitionTo(playScene, transitionTime);
     }
     public void BotonOpciones()
     {
