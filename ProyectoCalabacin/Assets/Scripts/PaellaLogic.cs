@@ -32,7 +32,7 @@ public class PaellaLogic : MonoBehaviour
         return Vector2.Distance(punto, transform.position) <= radio;
     }
 
-    public void AñadirObjeto(GameObject obj)
+    public void AnadirObjeto(GameObject obj)
     {
         if (!objetosColocados.Contains(obj))
         {

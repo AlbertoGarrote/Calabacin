@@ -1,6 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Components;
+using Components.KitchenComponents;
+using Components.KitchenComponents.SnapableArea;
+using ScriptableObjects;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Draggeable : MonoBehaviour
 {
@@ -8,14 +14,29 @@ public class Draggeable : MonoBehaviour
     private bool arrastrandoExternamente = false;
     public int tipo;
 
+    public ASnapableArea CurrentSnapableArea;
+    
+    public Vector2 PreviousPosition { get; set; }
+    
+    public Ingredient Ingredient { get; set; }
+
+    private void Awake()
+    {
+        if (tag.Equals("Ingredient")) 
+            PreviousPosition = Vector2.zero;
+        else
+            PreviousPosition = transform.position;
+    }
+
     private void OnMouseDown()
     {
-        diferencia = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - (Vector2)transform.position;
+        IniciarArrastre();
     }
 
     private void OnMouseDrag()
     {
-        transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - diferencia;
+        if(this.enabled)
+            transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - diferencia;
     }
     public void IniciarArrastre()
     {
@@ -40,23 +61,30 @@ public class Draggeable : MonoBehaviour
             Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
 
-            if (hit.collider != null && hit.collider.CompareTag("DropZoneTag") && !PaellaController.Instance.paellaLista)
+            if (hit.collider != null && hit.collider.gameObject != gameObject 
+                && hit.collider.gameObject.TryGetComponent<ASnapableArea>(out ASnapableArea snapZone) 
+                && snapZone.CanAcceptIngredient(this))
             {
-                PaellaLogic zona = hit.collider.GetComponent<PaellaLogic>();
-                if (zona != null && zona.EstaDentro(mouseWorldPos))
-                {
-                    Vector2 offset = Random.insideUnitCircle * 0.75f;
-                    transform.position = (Vector2)zona.transform.position + offset;
-
-                    transform.SetParent(zona.transform);
-                    zona.AñadirObjeto(gameObject);
-                    return;
-                }
+                ASnapableArea zona = hit.collider.GetComponent<ASnapableArea>();
+                
+                PreviousPosition = transform.position; // Save the position where it was snapped
+                colPropio.enabled = true;
+                if(CurrentSnapableArea != null)
+                    CurrentSnapableArea.UnsnapIngredient(this);
+                CurrentSnapableArea = zona;
+                zona.SnapIngredient(this);
             }
             else
             {
-                Destroy(gameObject);
+                if(PreviousPosition == Vector2.zero && tag.Equals("Ingredient"))
+                    Destroy(gameObject);
+                else 
+                {
+                    transform.position = PreviousPosition;
+                    colPropio.enabled = true;
+                }
             }
         }
     }
+
 }
