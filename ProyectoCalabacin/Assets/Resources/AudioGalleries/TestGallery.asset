@@ -14,13 +14,145 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audios:
   - audioType: 0
+    audioClip: {fileID: 8300000, guid: 78ade09fe0990c14aa886ee43cc2c91b, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: 9f43fc834a0f818439e32508040b0169, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: f31f41af99f949743820d18e70ebaf1e, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: 3d71a8c208ae9334c8546815a0a64468, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: 0fc8da582e29f2946b6812dd7eae4dab, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
     audioClip: {fileID: 8300000, guid: 040327b56a44bd04a97e78608e770e76, type: 3}
     volume: 1
     maxListeningDistance: 50
     pitch: 1
     randomPitchVariation: {x: 0, y: 0}
   - audioType: 0
+    audioClip: {fileID: 8300000, guid: 6bc0bd7a86f153b41a3367a8529e5bf4, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: ac0d3e395ece93c4e8c664956a20f858, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: 75c5997b8592e2244bc988768ebb054f, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: 57a0532f465731945bca544906dadd66, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: 040327b56a44bd04a97e78608e770e76, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: 4abbb520b01321e4588c93198ca9754a, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: ff294487122875043a0f74b7436216a8, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: ece47a5057998064fbbb782dbf96c5e1, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: 1f7f5bed60f76064a99527f446485a70, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: 378c8d7b50a6fe24ea3dbbb67eba63a8, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: 378c8d7b50a6fe24ea3dbbb67eba63a8, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: ae8fbbf3764d43049b9868814f388b4c, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: f09e8a94c40173441ac0834cd2b690e5, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: e999999cff063844cbcd24d57f2b1819, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: 87b2b8c6ff0e1ca4f8a8c9671ae7e5b5, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: 7dc56612092116a4fae4ec1d927d2097, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
     audioClip: {fileID: 8300000, guid: 36c4a227fdd95c04f8443cf8d7a31960, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: 3172309374fd21642a7f5ceca364aeb3, type: 3}
     volume: 1
     maxListeningDistance: 50
     pitch: 1
