@@ -1,6 +1,8 @@
 using System.Linq;
 using Components.KitchenComponents;
 using Components.Orders;
+using Game.Audio;
+using Patterns.ServiceLocator;
 using ScriptableObjects;
 using UnityEngine;
 
@@ -35,26 +37,34 @@ namespace Components.Clients
 
         public void ReceiveOrder(PaellaContainer paella)
         {
+            
+            var audioOptions = AudioOptionsBuilder.BuildCommon2DAudio(false, "");
+            
+            var soundManager = ServiceLocator.Instance.GetService<SoundManager>();
             if(CheckIfCorrectOrder(paella))
             {
                 if (CheckIfIngredientIsRaw(paella))
                 {
+                    soundManager.PlayOverlaySound("ClienteEnfadado1", audioOptions);
                     CancelOrder();
                 }
                 else
                 {
                     if (CheckIfIngredientIsBurnt(paella))
                     {
+                        soundManager.PlayOverlaySound("ClienteFeliz1", audioOptions);
                         CurrencyManager.Instance.AddCurrency(paella.IngredientsInPaella.Count * 3); 
                     }
                     else
                     {
+                        soundManager.PlayOverlaySound("ClienteFeliz2", audioOptions);
                         CurrencyManager.Instance.AddCurrency(paella.IngredientsInPaella.Count * 10); 
                     }
                 }
             }
             else
             {
+                soundManager.PlayOverlaySound("ClienteEnfadado2", audioOptions);
                 CancelOrder();
             }
             ClientManager.Instance.ReleaseSpawnPoint(Id);

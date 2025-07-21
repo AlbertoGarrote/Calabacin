@@ -1,4 +1,6 @@
 using Components.KitchenComponents.SnapableArea;
+using Game.Audio;
+using Patterns.ServiceLocator;
 using UnityEngine;
 
 namespace Components.KitchenComponents
@@ -27,6 +29,11 @@ namespace Components.KitchenComponents
             deliveryPoint = ServiceManager.Instance.GetDeliveryPoint(ref deliveryId);
             ingredient.GetComponent<PaellaContainer>().DeliveryId = deliveryId;
 
+
+            var audioOptions = AudioOptionsBuilder.BuildCommon2DAudio(false, "");
+            
+            var soundManager = ServiceLocator.Instance.GetService<SoundManager>();
+            soundManager.PlaySoundOn(this.gameObject, "CampanaPedido", audioOptions);
             PaellaManager.Instance.CreatePaella(ingredient.GetComponent<PaellaContainer>().Id);
             ingredient.transform.position = transform.position;
             isAnimating = true;

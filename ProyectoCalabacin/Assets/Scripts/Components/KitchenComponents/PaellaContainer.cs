@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using Components.KitchenComponents.SnapableArea;
+using Game.Audio;
+using Patterns.ServiceLocator;
 using UnityEngine;
 
 namespace Components.KitchenComponents
@@ -36,6 +38,11 @@ namespace Components.KitchenComponents
             
             Ingredient ingredient = draggeable.gameObject.GetComponent<Ingredient>();
             IngredientsInPaella.Add(ingredient);
+
+            var audioOptions = AudioOptionsBuilder.BuildCommon2DAudio(false, "");
+            
+            var soundManager = ServiceLocator.Instance.GetService<SoundManager>();
+            soundManager.PlaySoundOn(this.gameObject, "TuercaSFX", audioOptions);
             
             draggeable.enabled = false; // Disable dragging after snapping
             draggeable.GetComponent<CircleCollider2D>().enabled = false; // Disable collider to prevent further interactions

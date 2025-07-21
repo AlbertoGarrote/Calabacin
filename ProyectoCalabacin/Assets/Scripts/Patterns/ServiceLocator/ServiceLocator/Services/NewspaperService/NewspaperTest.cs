@@ -39,9 +39,4 @@ public class NewspaperTest : MonoBehaviour, INewspaperReader
         }
     }
     
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.L))
-        newspaperService.PublishToNewspaper("Test",new object[]{"String",19,1f});
-    }
 }

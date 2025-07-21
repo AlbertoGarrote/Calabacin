@@ -1,4 +1,7 @@
 using System;
+using Game.Audio;
+using Game.Music;
+using Patterns.ServiceLocator;
 using Patterns.Singleton;
 using TMPro;
 using UnityEngine;
@@ -12,6 +15,7 @@ namespace Components
 
         private void Start()
         {
+            
             CurrentCurrency = 0; // Initialize currency to zero at the start
             currencyText.text = $"{CurrentCurrency}";
         }

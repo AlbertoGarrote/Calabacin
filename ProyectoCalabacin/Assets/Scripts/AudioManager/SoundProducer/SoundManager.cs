@@ -223,19 +223,6 @@ namespace Game.Audio
             //ap = PlaySoundOn(this.gameObject, "ClienteEnfadado2", AudioOptionsBuilder.BuildUnique2DImmediateAudio(true, "tag"));
         }
 
-        public void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.P))
-                ApplyFadeToSoundProducersWithTag("tag", 0, 1, 10);
-
-            if (Input.GetKeyDown(KeyCode.R))
-                ap.FadeSound(1, 0, 10, ap.ImmediateStop);
-
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                StopAllSoundProducers(false);
-            }
-        }
 
     }
 }

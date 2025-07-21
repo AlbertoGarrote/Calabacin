@@ -27,21 +27,6 @@ public class PauseTest : MonoBehaviour, IPausableObject
     }
 
     int debugPause;
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.P)){
-            debugPause++;
-            if (debugPause < 10)
-                ServiceLocator.Instance.GetService<PauseService>().Pause(debugPause,10);
-            else{
-                debugPause = 0;
-                ServiceLocator.Instance.GetService<PauseService>().DropPauseStackTo(debugPause);
-            }
-            Debug.Log(debugPause);
-        }
-        if (isPaused) return;
-        Debug.Log("Hello");
-    }
     public void OnDisable()
     {
         ServiceLocator.Instance.GetService<PauseService>().UnSubscribeToPauseEvent(OnPause);

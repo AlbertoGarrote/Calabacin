@@ -57,10 +57,6 @@ namespace Components.Clients
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.C)) // For testing purposes, spawn a client when 'C' is pressed
-            {
-                GameObject client = SpawnClient();
-            }
             if (elapsedTime >= timeForNextClient)
             {
                 GameObject client = SpawnClient();
