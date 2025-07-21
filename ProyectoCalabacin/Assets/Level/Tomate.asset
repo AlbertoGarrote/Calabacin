@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Tomate
   m_EditorClassIdentifier: 
   Name: Tomate
-  Sprite: {fileID: 21300000, guid: 1ca5ed59424fc18409d07aec59137c53, type: 3}
+  Sprite: {fileID: -1876744850, guid: cea3b1801596ef84b8352f1fd748398e, type: 3}
   Status: 0
+  HasToBeCooked: 0

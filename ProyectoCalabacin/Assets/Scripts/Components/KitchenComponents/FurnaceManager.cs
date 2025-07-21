@@ -10,6 +10,7 @@ namespace Components.KitchenComponents
     {
         [SerializeField] private float CookTime = 5; 
         [SerializeField] private float BurnTime = 10; 
+        [SerializeField] private Transform furnaceTransform;
         
         private Ingredient _currentIngredient;
         private bool _furnaceIsCooking;
@@ -80,7 +81,7 @@ namespace Components.KitchenComponents
         {
             base.SnapIngredient(draggeable);
 
-            draggeable.transform.position = transform.position;
+            draggeable.transform.position = furnaceTransform.position;
             Ingredient ingredient = draggeable.gameObject.GetComponent<Ingredient>();
             CookIngredient(ingredient);
             

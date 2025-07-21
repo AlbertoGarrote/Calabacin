@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Conejo
   m_EditorClassIdentifier: 
   Name: Conejo
-  Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  Sprite: {fileID: -1208816259, guid: cea3b1801596ef84b8352f1fd748398e, type: 3}
   Status: 0
   HasToBeCooked: 1
