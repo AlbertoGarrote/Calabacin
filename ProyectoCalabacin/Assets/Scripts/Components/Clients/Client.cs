@@ -37,13 +37,13 @@ namespace Components.Clients
         {
             if(CheckIfCorrectOrder(paella))
             {
-                if (CheckIfIngredientIsRaw())
+                if (CheckIfIngredientIsRaw(paella))
                 {
                     CancelOrder();
                 }
                 else
                 {
-                    if (CheckIfIngredientIsBurnt())
+                    if (CheckIfIngredientIsBurnt(paella))
                     {
                         CurrencyManager.Instance.AddCurrency(paella.IngredientsInPaella.Count * 3); 
                     }
@@ -70,15 +70,15 @@ namespace Components.Clients
             
         }
         
-        private bool CheckIfIngredientIsRaw()
+        private bool CheckIfIngredientIsRaw(PaellaContainer paella)
         {
             // Check if any ingredient with HasToBeCooked property in the order is raw (status 0)
-            return ClientOrder.Ingredients.Any(ingredient => ingredient.Key.HasToBeCooked && ingredient.Key.Status == 0);
+            return paella.IngredientsInPaella.Any(ingredient => ingredient.CurrentStatus == 0 && ingredient.IngredientData.HasToBeCooked);
         }
         
-        private bool CheckIfIngredientIsBurnt()
+        private bool CheckIfIngredientIsBurnt(PaellaContainer paella)
         {
-            return ClientOrder.Ingredients.Any(ingredient => ingredient.Key.HasToBeCooked && ingredient.Key.Status == 0);
+            return paella.IngredientsInPaella.Any(ingredient => ingredient.CurrentStatus == 2 && ingredient.IngredientData.HasToBeCooked);
         }
 
         public void CancelOrder()

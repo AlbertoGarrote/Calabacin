@@ -7,6 +7,7 @@ namespace Components.KitchenComponents
     public class PaellaContainer : ASnapableArea
     {
         public int Id {get; set;}
+        public int DeliveryId {get; set;} // Delivery ID for the Paella
         public List<Ingredient> IngredientsInPaella {get; private set;}
         
         private void Awake()

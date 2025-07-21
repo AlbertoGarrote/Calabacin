@@ -16,7 +16,7 @@ namespace Components.KitchenComponents
 
             if (draggeable.CompareTag("Paella"))
             {
-                PaellaManager.Instance.RemovePaella(draggeable.GetComponent<PaellaContainer>());
+                PaellaManager.Instance.CreatePaella(draggeable.GetComponent<PaellaContainer>().Id);
             }
             
             Destroy(draggeable.gameObject);

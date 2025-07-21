@@ -13,13 +13,13 @@ namespace Components
         private void Start()
         {
             CurrentCurrency = 0; // Initialize currency to zero at the start
-            currencyText.text = $"Currency: {CurrentCurrency}";
+            currencyText.text = $"{CurrentCurrency}";
         }
         
         public void AddCurrency(int amount)
         {
             CurrentCurrency += amount;
-            currencyText.text = $"Currency: {CurrentCurrency}";
+            currencyText.text = $"{CurrentCurrency}";
         }
     }
 }

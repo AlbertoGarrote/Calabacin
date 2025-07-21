@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Marisco
   m_EditorClassIdentifier: 
   Name: Marisco
-  Sprite: {fileID: -502573630, guid: 6304629e9d2e0a749bda41239a2f923b, type: 3}
+  Sprite: {fileID: -1738658138, guid: cea3b1801596ef84b8352f1fd748398e, type: 3}
   Status: 0
   HasToBeCooked: 0

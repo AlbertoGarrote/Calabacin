@@ -21,7 +21,9 @@ namespace Components.Clients
         {
             base.SnapIngredient(draggeable);
             
+            ServiceManager.Instance.CleanDelivery(draggeable.GetComponent<PaellaContainer>().DeliveryId);
             GetComponent<Client>().ReceiveOrder(draggeable.GetComponent<PaellaContainer>());
+            
             Destroy(draggeable.gameObject);
         }
     }

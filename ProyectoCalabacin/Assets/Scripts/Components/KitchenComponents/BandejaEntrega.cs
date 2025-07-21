@@ -5,13 +5,13 @@ namespace Components.KitchenComponents
 {
     public class BandejaEntrega : ASnapableArea
     {
-        public Transform deliveryPoint;
         public float transitionSpeed = 1f;
         private bool isAnimating = false;
+        private Vector3 deliveryPoint;
         
         public override bool CanAcceptIngredient(Draggeable ingredient)
         {
-            if(!ingredient.CompareTag("Ingredient") && base.CanAcceptIngredient(ingredient))
+            if(!ingredient.CompareTag("Ingredient") && base.CanAcceptIngredient(ingredient) && ServiceManager.Instance.CanBeDelivered())
             {
                 return true;
             }
@@ -23,9 +23,12 @@ namespace Components.KitchenComponents
         public override void SnapIngredient(Draggeable ingredient)
         {
             base.SnapIngredient(ingredient);
+            int deliveryId = 0;
+            deliveryPoint = ServiceManager.Instance.GetDeliveryPoint(ref deliveryId);
+            ingredient.GetComponent<PaellaContainer>().DeliveryId = deliveryId;
 
+            PaellaManager.Instance.CreatePaella(ingredient.GetComponent<PaellaContainer>().Id);
             ingredient.transform.position = transform.position;
-            Camera.main.gameObject.GetComponent<Cam>().CambiarCamara(0);
             isAnimating = true;
             
         }
@@ -33,14 +36,13 @@ namespace Components.KitchenComponents
         void LateUpdate()
         {
             if(_currentIngredient == null || !isAnimating) return;
-            if(_currentIngredient.transform.position == deliveryPoint.position)
+            if(_currentIngredient.transform.position == deliveryPoint)
             { 
-                _currentIngredient.transform.SetParent(deliveryPoint);
-                _currentIngredient.GetComponent<Draggeable>().PreviousPosition = deliveryPoint.position;
+                _currentIngredient.GetComponent<Draggeable>().PreviousPosition = deliveryPoint;
                 _currentIngredient = null;
                 return;
             }
-            _currentIngredient.transform.position = Vector3.Lerp(_currentIngredient.transform.position, deliveryPoint.position, Time.deltaTime * transitionSpeed);
+            _currentIngredient.transform.position = Vector3.Lerp(_currentIngredient.transform.position, deliveryPoint, Time.deltaTime * transitionSpeed);
         }
     }
 }
