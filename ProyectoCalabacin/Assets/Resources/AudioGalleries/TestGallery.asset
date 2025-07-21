@@ -157,4 +157,40 @@ MonoBehaviour:
     maxListeningDistance: 50
     pitch: 1
     randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: f2aad53ca7354f040b9e3073e7d31630, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: 257218cd6cd05064a880ac5cb61a5fca, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: b4da2f93e1461254b91acecc3a5ef997, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: 7ab5a9302b39d7141b62c80a3bda0d98, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: ed73b5375902caa428482114592d77f9, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
+  - audioType: 0
+    audioClip: {fileID: 8300000, guid: a65867e77b627ac40aef7111685d52df, type: 3}
+    volume: 1
+    maxListeningDistance: 50
+    pitch: 1
+    randomPitchVariation: {x: 0, y: 0}
   audioCollecions: []
